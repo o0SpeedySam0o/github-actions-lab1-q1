@@ -1,32 +1,20 @@
 name: CI
 
 on:
-  push:  
+  push:
 
 jobs:
-  checkout:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
-      with:
-        repository: o0SpeedySam0o/github-actions-lab1-q1
 
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
 
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-      with:
-        repository: o0SpeedySam0o/github-actions-lab1-q1
-
     - name: Install dependencies
-      working-directory: ./  # Set the working directory to the root of the repository
       run: |
         pip install -r requirements.txt
