@@ -15,4 +15,6 @@ jobs:
 
     - name: Install dependencies
       run: |
+        echo fastapi==0.63.0 > requirements.txt
+        sudo chmod 777 requirements.txt
         pip install -r requirements.txt
