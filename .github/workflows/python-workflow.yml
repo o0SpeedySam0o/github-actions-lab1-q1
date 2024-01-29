@@ -14,7 +14,8 @@ jobs:
         python-version: 3.8
 
     - name: Install dependencies
+      uses: actions/checkout@v4
+      with:
+        repository: o0SpeedySam0o/github-actions-lab1-q1
       run: |
-        echo fastapi==0.63.0 > requirements.txt
-        sudo chmod 777 requirements.txt
         pip install -r requirements.txt
