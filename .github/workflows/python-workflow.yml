@@ -21,6 +21,12 @@ jobs:
       with:
         python-version: 3.8
 
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        repository: o0SpeedySam0o/github-actions-lab1-q1
+
     - name: Install dependencies
+      working-directory: ./  # Set the working directory to the root of the repository
       run: |
         pip install -r requirements.txt
