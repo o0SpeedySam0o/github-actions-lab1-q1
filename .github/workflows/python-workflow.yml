@@ -4,6 +4,14 @@ on:
   push:  
 
 jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        repository: o0SpeedySam0o/github-actions-lab1-q1
+
   build:
     runs-on: ubuntu-latest
 
@@ -14,8 +22,5 @@ jobs:
         python-version: 3.8
 
     - name: Install dependencies
-      uses: actions/checkout@v4
-      with:
-        repository: o0SpeedySam0o/github-actions-lab1-q1
       run: |
         pip install -r requirements.txt
